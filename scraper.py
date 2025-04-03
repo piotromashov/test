@@ -26,6 +26,13 @@ print("Esperando 10 segundos para que abras la ventana de Recraft...")
 time.sleep(10)
 
 # Función para mover y hacer clic con delay
+def download_image(x, y):
+    move_and_click(x, y, 'left')    # select first image
+    move_and_click(800, 600, 'right')  # right click on it
+    move_and_click(853, 659, 'left') #save to...
+    move_and_click(1575, 1032, 'left') #save
+    move_and_click(55, 681, 'left') #close
+
 def move_and_click(x, y, button='left'):
     if keyboard.is_pressed('esc'):
         print("ESC presionado. Finalizando script.")
@@ -44,23 +51,9 @@ while True:
         print("ESC presionado. Finalizando script.")
         break
     # Primer set
-    move_and_click(500, 650, 'left')
-    move_and_click(1000, 750, 'right')
-    move_and_click(1109, 837, 'left')
-    move_and_click(1880, 743, 'left')
-    move_and_click(35, 700, 'left')
-    # Segundo set
-    move_and_click(1245, 650, 'left')
-    move_and_click(1000, 750, 'right')
-    move_and_click(1109, 837, 'left')
-    move_and_click(1880, 743, 'left')
-    move_and_click(35, 700, 'left')
-    # Tercer set
-    move_and_click(2058, 650, 'left')
-    move_and_click(1000, 750, 'right')
-    move_and_click(1109, 837, 'left')
-    move_and_click(1880, 743, 'left')
-    move_and_click(35, 700, 'left')
+    download_image(300,600)    # select first image
+    download_image(900,600)
+    download_image(1500,600)
     # Scroll hacia abajo
     pyautogui.scroll(-1000)
     time.sleep(1)
